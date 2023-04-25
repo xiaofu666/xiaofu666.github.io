@@ -48,10 +48,10 @@ hr {
 body, li, span, p {
     cursor: url(https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cursor/texto.cur),auto;
 }
-a {
+/* a {
     background-color: transparent;
     cursor: url(https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cursor/ayuda.cur),auto;
-}
+} */
 strong{
     color: #FF0066;
 }
@@ -201,10 +201,6 @@ h1 {
     color: rgba(0, 0, 0, 0.5);
 }
 
-.tool a {
-    color: #8c40ff;
-}
-
 .is-center {
     text-align: center;
 }
@@ -282,6 +278,30 @@ aside_content .card-info .author-info__description {
     -o-animation: main 1s;
     -ms-animation: main 1s;
     animation: main 1s;
+}
+
+.tool .button {
+	border: none;
+	display: inline-block;
+	outline: 0;
+	padding: 8px 16px;
+	vertical-align: middle;
+	overflow: hidden;
+	text-decoration: none;
+	color: #fff;
+	background-color: #49b1f5;
+	text-align: center;
+	transition: .2s ease-out;
+	cursor: pointer;
+	white-space: nowrap;
+	box-shadow: 0px 2px 6px rgba(0,0,0,0.12), 0px 1px 2px rgba(0,0,0,0.24);
+	font-family: '微软雅黑';
+	border-radius: 2px;
+	margin-right: 10px;
+}
+.tool a {
+	text-decoration: none;
+	color: inherit;
 }
 
 @media screen and (min-width: 768px){
