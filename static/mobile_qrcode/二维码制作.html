@@ -1,23 +1,23 @@
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
 		<link href="https://www.liantu.com/css/2013/base.css" type="text/css" rel="stylesheet">
 		<link href="https://www.liantu.com/css/2013/index.css?version=20190308" type="text/css" rel="stylesheet">
 		<script type="text/javascript" src="https://www.liantu.com/js/2013/jquery-1.8.2.min.js"></script>
-		<script type="text/javascript" src="https://www.liantu.com/js/2013/iColorPicker.js"></script>
-		<script type="text/javascript" src="https://www.liantu.com/js/2013/public.js"></script>
-		<script type="text/javascript" src="https://www.liantu.com/js/2013/index.js"></script>
-		<script type="text/javascript" src="https://www.liantu.com/js/2013/basefn.js?v=20181109"></script>
-		<script type="text/javascript" src="https://www.liantu.com/js/2013/qrcode.js"></script>
-		<script type="text/javascript" src="https://www.liantu.com/js/2013/canvas.js"></script>
+		<script type="text/javascript" src="iColorPicker.js"></script>
+		<script type="text/javascript" src="public.js"></script>
+		<script type="text/javascript" src="pc_index.js"></script>
+		<script type="text/javascript" src="basefn.js"></script>
+		<script type="text/javascript" src="qrcode.js"></script>
+		<script type="text/javascript" src="canvas.js"></script>
 		<script type="text/javascript">
 			var _speedMark = new Date();
 			(function() {
 				var u = navigator.userAgent;
 				var isMobile = u.indexOf('Mobi') > -1 || u.indexOf('iPh') > -1 || u.indexOf('480') > -1;
 				if (isMobile) {
-					location.href = 'https://m.liantu.com/';
+					location.href = 'static/mobile_qrcode/mobile_qrcode.html';
 				}
 			})();
 		</script>
@@ -86,7 +86,7 @@
 												<option value="1">电话</option>
 											</select>
 											<a href="javascript:" class="close" id="hidetel"><img
-													src="/images/2013/close.gif"></a>
+													src="/static/images/close.gif"></a>
 										</li>
 										<li>
 											<label>QQ</label>
@@ -106,7 +106,7 @@
 										</li>
 										<li>
 											<label>网址</label>
-											<input type="text" value="http://" id="card_url" class="dinput"
+											<input type="text" value="https://" id="card_url" class="dinput"
 												maxlength="255">
 										</li>
 										<li>
@@ -133,7 +133,7 @@
 									</div>
 									<div class="urlbox">
 										<ul class="card">
-										<li> <input type="text" class="dinput url" id="url_url" value="http://" maxlength="255"> </li>
+										<li> <input type="text" class="dinput url" id="url_url" value="https://" maxlength="255"> </li>
 										<li><div class="size" id="msg">输入网址</div></li>
 										</ul>
 									</div>
@@ -202,7 +202,7 @@
 						<div class="canvas">
 							<canvas height="300" width="300" id="canvas" style="cursor: default;">
 								<a id="pic" target="_blank" href="/" shorturl="/" rel="nofollow"><img id="qrcodeimg"
-										src="/images/2013/liantu.png"></a>
+										src="/static/jsonToModel/pay/wechatpay.JPG"></a>
 							</canvas>
 						</div>
 					</div>
@@ -248,7 +248,7 @@
 												onclick="iColorShow('gccolor','icp_gccolor');return false;"></div>
 										</div>
 										<a href="javascript:" class="close" id="resetGcColor"
-											style="display: none;"><img src="/images/2013/close.gif"></a>
+											style="display: none;"><img src="/static/images/close.gif"></a>
 									</li>
 									<li class="li3">
 										<label>定位点(外框)</label>
@@ -260,7 +260,7 @@
 												onclick="iColorShow('ptcolor','icp_ptcolor');return false;"></div>
 										</div>
 										<a href="javascript:" class="close" id="resetPtColor"
-											style="display: none;"><img src="/images/2013/close.gif"></a>
+											style="display: none;"><img src="/static/images/close.gif"></a>
 									</li>
 
 									<li class="li4">
@@ -294,7 +294,7 @@
 												onclick="iColorShow('inptcolor','icp_inptcolor');return false;"></div>
 										</div>
 										<a href="javascript:" class="close" id="resetInPtColor"
-											style="display: none;"><img src="/images/2013/close.gif"></a>
+											style="display: none;"><img src="/static/images/close.gif"></a>
 									</li>
 								</ul>
 							</div>
@@ -367,7 +367,7 @@
 												onclick="iColorShow('ftcolor','icp_ftcolor');return false;"></div>
 										</div>
 										<a href="javascript:" class="close" id="resetFtColor"
-											style="display: none;"><img src="/images/2013/close.gif"></a>
+											style="display: none;"><img src="/static/images/close.gif"></a>
 									</li>
 								</ul>
 							</div>
@@ -476,38 +476,6 @@
 			$(document).ready(function() {
 				resetAll();
 			});
-			if (window.showModalDialog && window.chrome) {
-				var $chajian = $('#chajian');
-				$chajian.attr('href', 'https://download.se.360.cn/ext/tbnbyhq_1.1.2.crx');
-				$chajian.find('img').attr('src', '/images/2013/da/youhuijuan.jpg');
-			}
-			//
-			-->
-		</script>
-		<script type="text/javascript">
-			<!--
-			defalutText($('#text_text'), '支持文本、网址和电子邮箱');
-			changeWifi();
-			tabfn($('#fntab li'), $('#fnbox .sub'));
-			fixtaba($('#fntab a'), $('#fntab li'));
-			tabfn($('#tabset .tabelem'), $('#fnblock .fnsubv'));
-			elemfocus($('#fnbox .dinput,#url_url,#text_text,#sms_sms'));
-			elemSwitch($('#addelem'), $('#litel'));
-			openmore($('#urloptions'), $('#urlset'));
-			addpic($('#logoimg'), $('#picelem'), $('#turn'), $('#format'));
-			hideelem($('#hidetel'), $('#litel'), $('#addelem'), function() {
-				$('#card_phone').val('');
-			});
-			urlselect();
-			$(document).ready(function() {
-				resetAll();
-			});
-			if (window.showModalDialog && window.chrome) {
-				var $chajian = $('#chajian');
-				$chajian.attr('href', 'https://download.se.360.cn/ext/tbnbyhq_1.1.2.crx');
-				$chajian.find('img').attr('src', '/images/2013/da/youhuijuan.jpg');
-			}
-			//
 			-->
 		</script>
 <div class="pin-panel" id="pin-panel" style="display: none; left: 693.5px; top: 526px;">
@@ -519,7 +487,7 @@
                 <li class="i19"></li><li class="i20"></li><li class="i21"></li><li class="i22"></li>
             </ul>
         </div>
-		<script type="text/javascript" src="https://www.liantu.com/js/2013/html5.js"></script>
+		<script type="text/javascript" src="html5.js"></script>
 		<script type="text/javascript" src="https://www.liantu.com/js/2013/ie.js"></script>
 		<script type="text/javascript" src="https://www.liantu.com//s.abcache.com/xc/script/index.js?v=20220105">
 		</script>

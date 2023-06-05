@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>在线二维码图片生成器</title>
+		<meta name="description" content="在线二维码生成器,提供免费的在线二维码生成服务，可以把电子名片、文本、wifi网络、电子邮件、短信、电话号码、网址等信息生成对应的二维码图片。二维码手机扫描软件下载。">
+		<meta name="keywords" content="二维码,二维码生成器,二维码图片,二维码是什么,手机二维码,二维码生成,二维码扫描软件,二维码识别软件,手机二维码识别软件,二维码解码器,二维码软件,手机二维码软件,二维码开放平台,二维码接口,二维码API">
+		<link rel="stylesheet" href="index.css">
+		<link rel="stylesheet" href="public.css">
+	</head>
+	<body>
+		<div class="mod-qrcode">
+			<div class="hd"><h3>二维码生成</h3></div>
+			<div class="bd">
+				<canvas id="canvas" width="360" height="360"></canvas>
+			</div>
+			<div class="ft">
+				<div class="box">
+					<p><input type="range" name="round" value="" min="-0.5" max="0.5" step="0.01"></p>
+					<p>
+						<a id="resetRound1" href="javascript:">液态</a>
+						<a id="resetRound" href="javascript:">直角</a>
+						<a id="resetRound2" href="javascript:">圆角</a>
+					</p>
+				</div>
+				<div class="box">
+					<textarea name="content" cols="30" rows="10" placeholder="请输入文本内容……"></textarea>
+				</div>
+				<div class="group">
+					<div class="row">
+						<label for="">背景颜色：</label>
+						<input type="color" name="bgColor" value="#ffffff">
+					</div>
+					<div class="row">
+						<label for="">前景颜色：</label>
+						<input type="color" name="fgColor" value="#000000">
+					</div>
+				</div>
+				<div class="group">
+					<div class="row">
+						<label for="">定点外框：</label>
+						<input type="color" name="ptColor" value="">
+						<span class="J_clear" style="display:none;">清除颜色</span>
+					</div>
+					<div class="row">
+						<label for="">定点内框：</label>
+						<input type="color" name="inptColor" value="">
+						<span class="J_clear" style="display:none;">清除颜色</span>
+					</div>
+				</div>
+				<div class="group">
+					<div class="row">
+						<label for="">渐变颜色：</label>
+						<input type="color" name="gcColor" value="">
+						<span class="J_clear" style="display:none;">清除颜色</span>
+					</div>
+					<div class="row">
+						<label for="">渐变方式：</label>
+						<select name="gradientWay">
+							<option value="0">无</option>
+							<option value="circular">圆形</option>
+							<option value="backslash" selected="selected">反斜线</option>
+							<option value="slash">斜线</option>
+							<option value="horizontal">水平</option>
+							<option value="vertical">垂直</option>
+						</select>
+					</div>
+				</div>
+				<div class="group">
+					<div class="row">
+						<label for="">logo图片：</label>
+						<input type="file" name="logo" value="">
+					</div>
+					<div class="row">
+						<label for="">logo样式：</label>
+						<select name="logotype">
+							<option value="icon">圆角</option>
+							<option value="border">白边</option>
+							<option value="stroke" selected="selected">描边</option>
+							<option value="default">原图</option>
+						</select>
+					</div>
+				</div>
+				<div class="box">
+						<a class="btn" href="javascript:;" id="savepng" download="小富自定义二维码.png">保存图片</a>
+				</div>
+			</div>
+			<div class="mask"></div>
+		</div>
+		
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript" src="qrcode.js"></script>
+		<script type="text/javascript" src="canvas.js"></script>
+		<script type="text/javascript" src="jquery.colorpicker.js"></script>
+		<script type="text/javascript" src="index.js"></script>
+	</body>
+</html>
