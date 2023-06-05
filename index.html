@@ -118,9 +118,29 @@
                             <p class="button"><a href="static/jsonToModel/index.html" target="_blank" rel="noopener noreferrer">Json转Model工具</a></p>
                         </div>
                         <hr>
-						
+						<!--MetingJS参数详情-->
+						<!--
+						id='外链播放器id',必须参数
+						type=[song=单曲, playlist=歌单, album=专辑, search=搜索结果, artist=艺术家],必须参数
+						server=[netease=网易云音乐, tencent=QQ音乐, kugou=酷狗音乐, xiami=虾米音乐, baidu=百度音乐],必须参数
+						fixed=启用固定模式，固定在左下角,默认false
+						mini=启用迷你模式,默认false
+						preload=[none,metadata,auto]
+						mutex=[互斥锁，默认true],默认false
+						order=[random=随机播放,list=列表播放]
+						loop=[all=全部循环, one=循环一次 ,none=不循环]
+						volume=[音量，默认0.7]
+						lrc-type=[歌词类型，默认0]
+						list-folded=[列表是否折叠，默认false]
+						list-max-height=列表最大高度,默认340px
+						storage-name=本地存储存储密钥，用于存储播放器设置,默认metingjs
+						-->
                         <h2>音乐</h2>
-                        <meting-js auto="https://y.qq.com/n/yqq/playlist/7713574197.html"></meting-js>
+						<!-- QQ音乐 -->
+						<!-- <meting-js auto="https://y.qq.com/n/yqq/playlist/7713574197.html"></meting-js> -->
+                        <!-- <meting-js server="tencent" type="playlist" id="7713574197" order="random"></meting-js> -->
+						<!-- 网易云音乐我的歌单 -->
+                        <meting-js server="netease" type="playlist" id="865176805" order="random"></meting-js>
                         <hr>
 
                         <h2>技能</h2>
@@ -210,29 +230,29 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery.fancybox@2.1.5/source/jquery.fancybox.js"></script>
-    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/instant.page@3.0.0/instantpage.js" type="module"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js" async></script>
+    <script async src="static/js/busuanzi.pure.mini.js"></script>
+    <script src="static/js/instantpage.js" type="module"></script>
+    <script src="static/js/lazysizes.main.js" async></script>
     <!-- aplayer、meting -->
     <!-- require APlayer -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
     <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
     <!-- require MetingJS -->
-    <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    <script src="static/js/Meting.js"></script>
 
     <!-- nplayer -->
-    <script src="https://unpkg.com/nplayer@latest/dist/index.min.js"></script>
+    <script src="static/js/index.min.js"></script>
 
     <!--   每日一言、今日诗词   -->
     <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
     <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
 
     <!-- 看板娘 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/css/font-awesome.min.css">
 	<script src="static/js/live2d.js"></script>
 
     <!--鼠标点击效果-->
-    <script src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/js/maodian.js"></script>
+    <script src="static/js/maodian.js"></script>
 	
 	
 	<script src="static/js/console.js"></script>
