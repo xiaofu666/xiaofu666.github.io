@@ -307,6 +307,7 @@ legend {
 	height: 36px;
 	line-height: 36px;
 	white-space: nowrap;
+	float: left;
 }
 
 .mod-qrcode .ft .box {
@@ -315,6 +316,8 @@ legend {
 }
 
 .mod-qrcode .ft .group {
+	height: 36px;
+	line-height: 36px;
 	padding: 5px 0;
 	border-bottom: 1px dotted #e2e2e2;
 }
