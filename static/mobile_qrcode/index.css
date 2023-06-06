@@ -313,6 +313,7 @@ legend {
 .mod-qrcode .ft .box {
 	position: relative;
 	margin-bottom: 10px;
+	float: center;
 }
 
 .mod-qrcode .ft .group {
