@@ -280,8 +280,8 @@ legend {
 }
 
 .mod-qrcode .bd canvas {
-	width: 180px;
-	height: 180px;
+	width: 150px;
+	height: 150px;
 	box-shadow: 1px 1px 5px rgba(0, 0, 0, .1);
 }
 
