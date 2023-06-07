@@ -308,6 +308,7 @@ legend {
 	line-height: 36px;
 	white-space: nowrap;
 	float: left;
+	margin-right: 20px;
 }
 
 .mod-qrcode .ft .box {
