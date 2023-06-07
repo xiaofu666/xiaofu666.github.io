@@ -89,30 +89,22 @@
     });
     $('#savepng').on('click',function(){
         var $this = $(this);
-        if(isWechart){
-    		$mask.show();
-	    	return false;
-    	}else{
-	        canvasObj.getBase64(function(data) {
-	            var url = 'data:image/png;base64,'+data;
-                if(window.navigator.msSaveBlob){
-                    window.navigator.msSaveBlob(dataURLtoBlob(url),'小富二维码.png');
-                }else if(navigator.userAgent.match(/MSIE 9/)){
-                    $('#pngdata').val(data);
-                    $('#form').submit();
-                }else{
-                    if(URL){
-                        if(url.length>1.5e6||navigator.userAgent.indexOf('iPhone')>-1){  //解决dataURL过大无法下载
-                            url = URL.createObjectURL(dataURLtoBlob(url));
-                        }
-                    }    
-    	            $this.attr('href',url).data('url',url).attr('download','小富二维码.png');
-                }
-	        });
-    	}
-    });
-    $mask.on('click',function(){
-    	$mask.hide();
+		canvasObj.getBase64(function(data) {
+			var url = 'data:image/png;base64,'+data;
+			if(window.navigator.msSaveBlob){
+				window.navigator.msSaveBlob(dataURLtoBlob(url),'小富二维码.png');
+			}else if(navigator.userAgent.match(/MSIE 9/)){
+				$('#pngdata').val(data);
+				$('#form').submit();
+			}else{
+				if(URL){
+					if(url.length>1.5e6||navigator.userAgent.indexOf('iPhone')>-1){  //解决dataURL过大无法下载
+						url = URL.createObjectURL(dataURLtoBlob(url));
+					}
+				}    
+				$this.attr('href',url).data('url',url).attr('download','小富二维码.png');
+			}
+		});
     });
     $('select[name="logotype"]').change(function(event) {
         var type = $(this).val();
