@@ -106,6 +106,14 @@
 			}
 		});
     });
+	// if(isWechart){
+	// 	$mask.show();
+	// 	return false;
+	// }else{
+	// }
+    $mask.on('click',function(){
+    	$mask.hide();
+    });
     $('select[name="logotype"]').change(function(event) {
         var type = $(this).val();
         canvasObj.changeLogotype(type);

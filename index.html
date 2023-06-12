@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="static/css/index.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.fancybox@2.1.5/source/jquery.fancybox.css">
+	<link href="static/css/comm.css" type="text/css" rel="stylesheet" />
     <script type="text/javascript">
         if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
             alert('朋友，上古浏览器不支持呢~');
@@ -95,6 +96,33 @@
                                     <div class="webinfo-site-pv-count" id="busuanzi_value_site_pv"></div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="card-widget card-webinfo">
+                        <div class="card-content">
+                            <div id="beijing_time">
+                            	<dd class="number" style=" visibility: visible;">
+                            		<b class="hour" id="hour-time">--</b><i>:</i><b class="minute" id="minute-time">--</b><i>:</i><b
+                            			class="second" id="second-time">--</b>
+                            	</dd>
+                            	<dd class="date" style="visibility: visible;">
+                            		北京时间：<em class="bjdate"><i class="year" id="year-time">----</i>-<i class="month"
+                            				id="month-time">-</i>-<i class="day" id="day-time">-</i> <i class="weekday"
+                            				id="weekday-time">--</i></em>
+                            	</dd>
+                            	<div class="server-time" style="background:none;">
+                            		<div class="clock" id="clock">
+                            			<!-- 原点 -->
+                            			<div class="origin"></div>
+                            			<!-- 时分秒针 -->
+                            			<div class="clock-line hour-line" id="hour-line"></div>
+                            			<div class="clock-line minute-line" id="minute-line"></div>
+                            			<div class="clock-line second-line" id="second-line"></div>
+                            		</div>
+                            	</div>
+                            </div>
+                            <script src="static/js/clock_new_sj.js" type="text/javascript" referrerpolicy="no-refer"></script>
                         </div>
                     </div>
                 </div>

@@ -1,0 +1,113 @@
+@charset "utf-8";
+
+.clock {
+	width: 150px;
+	height: 150px;
+	border: 0px solid silver;
+	box-shadow: 0px 0px 20px 3px #ececec inset;
+	border-radius: 130px;
+	position: relative;
+	margin: 5px auto;
+	z-index: 10;
+	background-color: #f6f6f6;
+}
+
+/* 时钟数字 */
+.clock-num {
+	width: 40px;
+	height: 40px;
+	font-size: 14px;
+	text-align: center;
+	line-height: 40px;
+	position: absolute;
+	z-index: 8;
+	color: #555;
+	font-family: "微软雅黑";
+}
+
+
+
+/* 指针 */
+.clock-line {
+	position: absolute;
+	z-index: 20;
+}
+
+.hour-line {
+	width: 40px;
+	height: 4px;
+	top: 75px;
+	left: 76px;
+	background-color: #000;
+	border-radius: 2px;
+	transform-origin: 0 50%;
+	box-shadow: 1px -3px 8px 3px #aaa;
+}
+
+.minute-line {
+	width: 60px;
+	height: 2px;
+	top: 74px;
+	left: 69px;
+	background-color: #000;
+	transform-origin: 7.692% 50%;
+	box-shadow: 1px -3px 8px 1px #aaa;
+}
+
+.second-line {
+	width: 70px;
+	height: 1px;
+	top: 77px;
+	left: 68px;
+	background-color: #f60;
+	transform-origin: 11.765% 50%;
+	box-shadow: 1px -3px 7px 1px #bbb;
+}
+
+/* 园点 */
+.origin {
+	width: 10px;
+	height: 10px;
+	border-radius: 10px;
+	background-color: #000;
+	position: absolute;
+	top: 72px;
+	left: 70px;
+	z-index: 14;
+}
+
+/* 刻度 */
+.clock-scale {
+	width: 100px;
+	height: 2px;
+	transform-origin: 0% 50%;
+	z-index: 7;
+	position: absolute;
+	top: 75px;
+	left: 75px;
+}
+
+.scale-show {
+	width: 6px;
+	height: 2px;
+	background-color: #838080;
+	float: left;
+}
+
+.scale-hidden {
+	width: 67.5px;
+	height: 2px;
+	float: left;
+}
+
+.number {
+	color: #41a7a3;
+	text-align: center;
+	font-size: 36px;
+}
+
+.date {
+	color: #282828;
+	font-size: 18px;
+	text-align: center;
+}
