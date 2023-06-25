@@ -34,6 +34,9 @@ $(function() {
             }else if (type == "Dart") {
                 s_title.html('Dart');
                 language = SFParserLanguage.Dart;
+            }else if (type == "SwiftUI") {
+                s_title.html('SwiftUI');
+                language = SFParserLanguage.SwiftUI;
             }
         }
     }

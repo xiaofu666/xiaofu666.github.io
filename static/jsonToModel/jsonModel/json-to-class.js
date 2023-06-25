@@ -64,6 +64,7 @@ SFValue.prototype.isObject = function(value) {
 };
 
 const SFParserLanguage = {
+    SwiftUI            : 11,
     Swift              : 0,
     SwiftClass         : 6,
     SwiftSexyJson      : 7,
@@ -87,6 +88,8 @@ const SFParserLanguage = {
                 return 'Kotlin';
             case this.Swift:
                 return 'Swift';
+            case this.SwiftUI:
+                return 'SwiftUI';
             case this.CNet:
                 return 'C#';
             case this.Java:
@@ -157,6 +160,7 @@ SFJsonParser.prototype.arrayElementType = function(key, element) {
     let elementInfo = new SFValue(element);
     switch (this.type) {
         case SFParserLanguage.Swift:
+        case SFParserLanguage.SwiftUI:
         case SFParserLanguage.SwiftClass:
         case SFParserLanguage.SwiftSexyJson:
         case SFParserLanguage.SwiftSexyJsonClass:
@@ -319,6 +323,73 @@ SFJsonParser.prototype.makeProperty = function(proType, key, value) {
     let property_str = '';
     let setget_str = '';
     switch (this.type) {
+        case SFParserLanguage.SwiftUI:
+            switch (proType) {
+                case SFValueType._Null:
+                case SFValueType._String: {
+                    setget_str = this.makeSetGetMothod(proType,key,'String');
+                    property_str = '    var ' + this.makeLowerName(key) + ': String\n';
+                    break;
+                }
+                case SFValueType._Int: {
+                    setget_str = this.makeSetGetMothod(proType,key,'Int');
+                    property_str = '    var ' + this.makeLowerName(key) + ': Int\n';
+                    break;
+                }
+                case SFValueType._Float: {
+                    setget_str = this.makeSetGetMothod(proType,key,'CGFloat');
+                    property_str = '    var ' + this.makeLowerName(key) + ': CGFloat\n';
+                    break;
+                }
+                case SFValueType._Boolean: {
+                    setget_str = this.makeSetGetMothod(proType,key,'Bool');
+                    property_str = '    var ' + this.makeLowerName(key) + ': Bool\n';
+                    break;
+                }
+                case SFValueType._Dictionary: {
+                    setget_str = this.makeSetGetMothod(proType,key,this.makeClassName(key));
+                    property_str = '    var ' + this.makeLowerName(key) + ': ' + this.makeClassName(key) + "\n";
+                    break;
+                }
+                case SFValueType._Array: {
+                    let valueInfo = new SFValue(value);
+                    switch (valueInfo.type) {
+                        case SFValueType._String:
+                            setget_str = this.makeSetGetMothod(proType,key,'[String]');
+                            property_str = '    var ' + this.makeLowerName(key) + ': [String]\n';
+                            break;
+                        case SFValueType._Int:
+                            setget_str = this.makeSetGetMothod(proType,key,'[Int]');
+                            property_str = '    var ' + this.makeLowerName(key) + ': [Int]\n';
+                            break;
+                        case SFValueType._Float:
+                            setget_str = this.makeSetGetMothod(proType,key,'[CGFloat]');
+                            property_str = '    var ' + this.makeLowerName(key) + ': [CGFloat]\n';
+                            break;
+                        case SFValueType._Boolean:
+                            setget_str = this.makeSetGetMothod(proType,key,'[Bool]');
+                            property_str = '    var ' + this.makeLowerName(key) + ': [Bool]\n';
+                            break;
+                        case SFValueType._Dictionary:
+                            setget_str = this.makeSetGetMothod(proType,key,'[' + this.makeClassName(key) + ']');
+                            property_str = '    var ' + this.makeLowerName(key) + ': [' + this.makeClassName(key) + ']\n';
+                            break;
+                        case SFValueType._Array:
+                            if (value.length > 0) {
+                                setget_str = this.makeSetGetMothod(proType,key,'[' + this.arrayElementType(key, value[0]) + ']');
+                                property_str = '    var ' + this.makeLowerName(key) + ': [' + this.arrayElementType(key, value[0]) + ']\n';
+                                break;
+                            }
+                            setget_str = this.makeSetGetMothod(proType,key,'[Any]');
+                            property_str = '    var ' + this.makeLowerName(key) + ': [Any]\n';
+                            break;
+                    }
+                }
+                    break;
+                default:
+                    break;
+            }
+            break;
         case SFParserLanguage.Swift:
         case SFParserLanguage.SwiftClass:
         case SFParserLanguage.SwiftSexyJson:
@@ -642,6 +713,10 @@ SFJsonParser.prototype.makeClassBeginTxt = function(key) {
             begin_txt = '//MARK: - ' + key + ' -\n\n';
             begin_txt += 'class ' + this.makeClassName(key) + ' {\n';
             break;
+        case SFParserLanguage.SwiftUI:
+             begin_txt = '//MARK: - ' + key + ' -\n\n';
+             begin_txt += 'struct ' + this.makeClassName(key) + ': Codable {\n';
+             break;
         case SFParserLanguage.Swift:
              begin_txt = '//MARK: - ' + key + ' -\n\n';
              begin_txt += 'struct ' + this.makeClassName(key) + ' {\n';
@@ -688,6 +763,7 @@ SFJsonParser.prototype.addDidParsedContent = function(content) {
 
 SFJsonParser.prototype.makeClassEndTxt = function() {
     switch (this.type) {
+        case SFParserLanguage.SwiftUI:
         case SFParserLanguage.Swift:
         case SFParserLanguage.SwiftClass:
         case SFParserLanguage.SwiftSexyJson:

@@ -1,26 +1,36 @@
 {
-  "name": "whc-json-to-class",
-  "version": "1.0.3",
-  "description": "The whc-json-to-class is the javascript plug-in that automatically converts the json string to the corresponding language model class",
-  "main": "index.js",
+  "name": "json-to-model-class",
+  "version": "1.0.0",
+  "description": "The json-to-model-class is the javascript plug-in that automatically converts the json string to the corresponding language model class",
+  "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/netyouli/whc-json-to-class.git"
+    "url": "https://github.com/xiaofu666/xiaofu666.github.io.git"
   },
   "keywords": [
-    "whc",
     "json",
     "to",
-    "class",
-    "whc-json-to-class"
+    "model",
+    "class"
   ],
-  "author": "wuhaichao",
-  "license": "MIT",
+  "infos": [
+	  {
+		"name": "xiaofu666",
+		"type": "git",
+		"url": "https://github.com/xiaofu666"
+	  },
+	  {
+		"name": "小富",
+		"type": "简书",
+		"url": "https://www.jianshu.com/u/b90f7dbcae6d"
+	  }
+  ],
+  "author": "小富",
   "bugs": {
-    "url": "https://github.com/netyouli/whc-json-to-class/issues"
+    "url": "https://github.com/xiaofu666/xiaofu666.github.io/issues"
   },
-  "homepage": "https://github.com/netyouli/whc-json-to-class#readme"
+  "homepage": "https://xiaofu666.github.io"
 }
