@@ -1,0 +1,497 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title></title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.428571; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:first-child { margin-top: -20px; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; }
+button, input, select, textarea { color: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; font-size-adjust: inherit; font-kerning: inherit; font-variant-alternates: inherit; font-variant-ligatures: inherit; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-position: inherit; font-variant-emoji: inherit; font-feature-settings: inherit; font-optical-sizing: inherit; font-variation-settings: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px !important; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; border-right-style: none; border-right-color: currentcolor; background-color: inherit; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  @page { margin: 20mm 0px; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: medium; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: medium !important; border-style: none !important; border-color: currentcolor !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; font-size-adjust: none; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="mermaid"] svg, [lang="flow"] svg { max-width: 100%; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; border-bottom-style: none; border-bottom-color: currentcolor; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: medium; }
+.highlight td, .highlight tr { border: 0px; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    padding-bottom: .3em;
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+   padding-bottom: .3em;
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table tr th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    text-align: left;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr td {
+    border: 1px solid #dfe2e5;
+    text-align: left;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+}
+
+ .typora-export li, .typora-export p, .typora-export,  .footnote-line {white-space: normal;} 
+</style>
+</head>
+<body class='typora-export' >
+<div  id='write'  class = 'is-mac'><p><strong>更新时间：2023年12月26日</strong></p><p><strong>生效时间：2023年12月26日</strong></p><p>&nbsp;</p><p><strong>YourET服务协议</strong></p><p>       <strong>【首部及导言】：</strong> </p><p>       <strong>欢迎您阅读《YourET服务协议》并成为YourET！</strong> </p><p>《YourET服务协议》（简称为“本协议”）是您与YourET网站（以下统称为“YourET”）之间关于“YourET”以及“YourET”中YourET提供的各项服务（以下统称为“会员”）的法律协议。</p><p>       <strong>本协议中与您的权益（可能）存在重大关系的条款（包括相关免除YourET责任的条款、限制您权利的条款、约定的争议解决方式及司法管辖条款等），YourET已采用字体加粗的方式来特别提醒您，请您留意重点查阅。您应当在确认充分阅读字体加粗条款，明确理解的前提下使用会员服务。</strong> </p><p>       <strong>根据国家法律法规、监管政策及行业规范变化、互联网高速发展态势及服务运营需要，YourET有权修改、替换、升级YourET软件/服务，并提前向用户进行公示（包括但不限于弹出公告、网站公告、系统消息、邮件等方式进行公示），同时据实修改YourET服务相关协议条款/规则以覆盖您与YourET的所有权利与义务，前述修改的协议条款/规则自公示期满之日起生效。如果用户不同意或者不接受YourET相关软件/服务的修改、替代、升级，有权拒绝、停止、取消使用YourET服务。如用户继续使用YourET服务，那么视为悉知变动内容并同意接受。</strong></p><p>       <strong>如果您未满18周岁，请在法定监护人的陪同下阅读本协议。</strong> </p><p>       <strong>一．总则</strong> </p><p>       （一） 会员服务是YourET在YourET网站及其软件客户端中设立的网络增值服务。 </p><p>       （二） 会员服务秉承以下宗旨：为成为会员的您提供各种更完善的线上线下增值服务，促进您与其他会员、会员与YourET之间的相互交流。 </p><p>&nbsp;</p><p>       <strong>二．YourET郑重声明：</strong> <strong>YourET服务，不影响YourET网站现有的一切免费服务并保证服务质量。YourET服务，与YourET现存正式会员服务体系并存。</strong> </p><p>&nbsp;</p><p>       <strong>三．获得会员服务的程序</strong> </p><p>       （一）成为会员的方法 </p><p>       1.您可通过YourET指定的包括但不限于银行卡、支付宝、微信支付等现有方式或未来YourET指定方式，在依约支付一定费用后开通会员；或通过YourET官方活动/他人赠与获赠会员、通过会员积分兑换成为会员。<strong>会员价格可能因您使用软件的版本不同而产生差异，以开通服务时显示的金额为准。</strong> </p><p>       2.<strong>您不得通过以下任何方式为自己或他人开通/获赠本服务：</strong> </p><p>       <strong>（1）以营利、经营等非个人使用的目的；</strong> </p><p>       <strong>（2）通过任何机器人软件、蜘蛛软件、爬虫软件、刷屏软件等任何程序、脚本、软件等方式；</strong> </p><p>       <strong>（3）通过任何不正当手段或以违反诚实信用原则的方式（如利用规则漏洞、利用系统漏洞、黑色产业、投机等）；</strong> </p><p>       <strong>（4）通过技术手段对会员服务期限、消费金额、交易状态等信息进行修改；</strong> </p><p>       <strong>（5）通过非YourET指定的方式；</strong> </p><p>       <strong>（6）通过侵犯YourET或他人合法权益的方式；</strong> </p><p>       <strong>（7）通过其他违反相关法律、行政法规、国家政策等方式。</strong> </p><p><strong>您若违反以上规定的，YourET有权根据您的实际情况采取修改、限制、中止或终止全部或部分您的会员服务，并不予任何赔偿或退还费用/会员积分。</strong> </p><p>       3.您应通过YourET指定方式加入会员，并须阅读、确认及遵守相关的协议和使用方法。您申请加入会员所提供的资料必须真实有效，并在您的个人资料发生变化时请及时修改注册的个人资料。 </p><p>       （二）您成为会员成功后，可享受会员多项专属特权和增值服务，有效日期以会员服务开通的时间算起，具体您可以在<strong>YourET【会员】页面</strong>进行查询。 </p><p>       （三）您的会员到期前，YourET将通过站内消息-系统通知等方式提示您会员即将到期，您可再次通过购买/获赠/兑换等具体方式延续您的会员。若您的会员到期，YourET将终止提供会员服务。 </p><p> <strong>（四）您知悉并同意，会员服务系网络商品和虚拟商品，采用先收费后服务的方式，会员费用是您所购买的会员服务所对应的网络商品价格，而非预付款或者存款、定金、储蓄卡等性质，会员服务一经开通后不可转让或退款（如因会员服务存在重大瑕疵导致您完全无法使用等YourET违约情形、本协议另有约定、法律法规要求必须退款的或您通过客服联系YourET并经YourET判断后认为可以退款等情形除外）。若您不接受会员服务，您可停止使用会员服务或停止延续会员服务。</strong> </p><p>&nbsp;</p><p>       <strong>四．YourET的义务</strong> </p><p>       YourET在为会员提供多项专属特权和增值服务同时，尽最大努力确保会员服务的稳定性，为此提供各项技术及客服支持，包括但不限于： </p><p>       （一）开通、获赠成为会员期间所遇到的注册、登陆、购买、兑换、赠送等问题的网上咨询客户服务； </p><p>       （二）会员服务积极有效的内容支持和技术支持，包括日常运营、维护、修复及更新； </p><p>       （三）会员服务提供期间产生的常见问题解答、基本规则解释； </p><p>       （四）YourET提供给您的其他技术和/或服务。 </p><p>&nbsp;</p><p>       <strong>五．会员守则</strong> </p><p>       （一）您成为会员后将享有各项会员专属特权，您可在【会员-会员特权-内容特权】页面查看会员专属特权内容。此外，为了提升您的会员服务体验，YourET还将免费提供各项附赠的增值服务（包括但不限于装扮特权、身份特权、视听特权等），附赠的增值服务内容请以【会员-会员特权】中的相关页面信息为准。本协议项下的会员特权名称与页面的说明不一致的，不影响您所实际享受的会员权益的内容。 </p><p>       （二）在您申请会员服务填写注册资料时，请您填写真实有效的信息。 </p><p>       <strong>（三）您不得采取出售、转让、盗用、租赁其他用户账户等方式进行会员注册或通过出售、转让、盗用、转借、租赁其他会员账户等方式享用会员。</strong> </p><p>       <strong>（四）您理解并同意：因版权合约限制，对于版权方要求视频/音乐等专案营销方式，YourET将应版权方要求另行按视频/音乐方式提供增值服务并收取费用，不计入会员中。</strong> </p><p>       <strong>（五）您理解并同意：YourET有权根据服务的整体规划、自身运营策略的变化等，对附赠的增值服务内容进行实时调整。</strong> </p><p>       <strong>（六）如您违反本协议或YourET服务条款，YourET有权利采取以下一项或多项措施处理：</strong></p><p>       <strong>1.采取技术手段，删除、屏蔽或断开相关信息；</strong></p><p>       <strong>2.修改、限制、中止或终止全部或部分会员服务；</strong></p><p>       <strong>3.收取违约金，并将您已支付而未使用的任何费用、积分或权益等冲抵违约金；若违约金不足以赔偿损失，则进一步要求您赔偿损失。</strong> </p><p>       <strong>（七）您在使用会员服务的过程中，应遵守法律法规及其他规范性文件，包括但不限于《中华人民共和国保守国家秘密法》、《中华人民共和国著作权法》、《中华人民共和国计算机信息系统安全保护条例》、《计算机软件保护条例》、《互联网电子公告服务管理规定》、《中华人民共和国网络安全法》、《信息网络传播权保护条例》等；应遵守公共秩序，尊重社会公德，不得危害网络安全，不得利用网络从事危害国家安全、荣誉和利益，煽动颠覆国家政权、推翻社会主义制度，煽动分裂国家、破坏国家统一，宣扬恐怖主义、极端主义，宣扬民族仇恨、民族歧视，传播暴力、淫秽色情信息，编造、传播虚假信息扰乱经济秩序和社会秩序，以及侵害他人名誉、隐私、知识产权和其他合法权益等活动。在任何情况下，YourET一旦合理地认为您存在上述行为的，可以不经事先通知终止向您提供会员服务。</strong> </p><p>       <strong>（八）请您负责妥善且正确地保管、使用、维护您的会员资料、账户信息及账户密码。请您对您账户信息和账户密码采取必要和有效的保密措施。为保护账号安全，防止账号被盗等情况发生，YourET可能会不时或定期采用一种或多种方式对账号使用者进行用户身份验证（如短信验证、邮件认证等），如未成功通过验证的，YourET有合理理由怀疑该账号出现被盗等不安全情况，并视情节严重情况而决定是否中止向该账号继续提供会员服务及/或采取进一步措施。</strong> </p><p>&nbsp;</p><p>       <strong>六．隐私保护</strong> </p><p>       <strong>您理解并同意，YourET将按照《YourET隐私政策》的约定处理和保护您的个人信息。</strong> </p><p>&nbsp;</p><p>       <strong>七.未成年人保护</strong> </p><p>       <strong>（一）YourET非常注重未成年人的保护。若您为未成年人，应在监护人监护、指导下阅读本协议，并在取得监护人的同意后使用会员服务。</strong> </p><p>       <strong>（二）监护人应指导子女上网应该注意的安全问题，防患于未然。若监护人同意未成年人使用会员服务，必须以监护人名义申请消费，并对未成年人使用会员服务进行正确引导、监督。未成年人使用会员服务，以及行使和履行本协议项下的权利和义务即视为已获得了监护人的认可。</strong> </p><p>      <strong>（三）YourET提醒未成年人在使用会员服务时，要善于网上学习，认清网络世界与现实世界的区别，避免沉迷于网络，影响日常的学习生活。</strong></p><p> </p><p>       <strong>八．会员服务的通知和公告办法</strong> </p><p><strong>会员服务的通知和公告将通过以下形式之一或多种形式对会员发布，会员可通过该公告查询最新的会员专属特权内容和附赠的增值服务内容、账户信息、会员的权利义务、服务规则等，并需严格遵守相应的服务规则</strong></p><p>&nbsp;</p><p>       <strong>九．会员服务的中止或终止</strong> </p><p>       （一）在发生如下情况时，YourET有权中止或终止向您提供会员服务： </p><p>       1.您主动中止或终止的，包括但不限于到期未进行续费等； </p><p>       2.您存在或YourET经独立判断后认为您存在任何违反国家法律法规或监管政策、违反本协议及YourET服务条款、影响或可能影响YourET或/及其关联公司的声誉、利益的行为的； </p><p>       3.根据法律法规、监管政策的规定或有权机关的要求； </p><p>       4.为维护账号与系统安全等紧急情况之需要； </p><p>       5.不可抗力（指不能预见、不能避免且不能克服的客观情况，包括国家法律、法规、政策及国家机关的命令及其他政府行为或者其它的诸如台风、洪水、地震、海啸、战争、罢工等）； </p><p>       6.其他YourET无法抗拒的情况。 </p><p>       <strong>（二）当发生前述中止或终止的情况时，您认可如下处理方式：</strong> </p><p>       <strong>1.如发生前述终止的情况时，已经产生但未使用的会员权益自动清除且不折现；</strong> </p><p>       <strong>2.除法律法规另有规定或YourET另有说明外，已收取的会员费用不予退还；</strong></p><p>       <strong>3.如您在YourET平台内有正在进行中的交易，YourET届时将视情况进行合理处理；</strong> </p><p>       <strong>4.如因您违反本协议导致终止的，YourET有权视情况要求您承担相应的违约责任；</strong> </p><p>       <strong>5.除法律法规另有规定或YourET另有说明外，YourET无需向您和第三人承担任何责任。</strong> </p><p>&nbsp;</p><p><strong>十．法律的适用和管辖</strong> </p><p>       <strong>本协议的解释，效力及纠纷的解决，适用于中华人民共和国大陆地区法律法规。如就本协议内容或其执行发生任何争议，应尽量友好协商解决；协商不成时，则争议各方均一致同意将争议提交上海仲裁委员会按照其仲裁规则进行仲裁。仲裁裁决为一裁终局，对各方均有法律约束力。</strong></p><p>&nbsp;</p><p><strong>YourET自动续费服务规则</strong></p><p>&nbsp;</p><p>       本YourET自动续费服务规则（下称“本规则”）被视为《YourET服务协议》的附件，如本规则与《YourET服务协议》存在冲突的，以本规则为准。  </p><p>       如您需使用YourET自动续费服务，则需同意本规则。 </p><p>      您理解并同意： </p><p>       \1. YourET自动续费服务（下称“本服务”）是指在您已开通会员的前提下，出于会员对于自动续费的需求，避免会员因疏忽或其他原因导致未能及时续费而提供的服务。具体自动续费计费周期包括：月度、季度、年度等（具体以YourET提供的为准），您可自行选择。  </p><p>       \2. <strong>如您开通本服务，则视为您授权YourET在您会员自动续费服务期限到期前24小时和到期后，委托支付渠道在不验证会员账户密码、支付密码、短信校验码等信息的情况下从您的自有充值账户、与会员账号绑定的第三方支付账户、银行卡、与苹果商店账户绑定的支付账户等（以下统称“账户”）中代扣下一个计费周期的费用。</strong></p><p><strong>因部分渠道（如苹果ios渠道等）由运营商或者支付渠道根据实际情况自行决定扣费周期，前述自动续费服务的扣款时间以各渠道实际扣款时间为准</strong>。</p><p>       \3. 该服务实现的前提是您已将会员账号与上述账户绑定，且可成功从上述账户中足额扣款。<strong>因上述账户中可扣款余额不足、账户本身异常等导致的续费失败，由您自行承担；如您未自主选择取消本服务，YourET可能在您账户本身恢复正常且余额恢复充足时/后，继续为您提供自动续费服务（具体以各第三方支付渠道的规则为准），一旦扣款成功，YourET将恢复您的会员服务和本服务。</strong> </p><p>       \4. 您知悉并同意，您使用第三方支付渠道支付费用的，您还将受到该第三方服务条款、使用规则的约束。  </p><p>       <strong>5. 本服务自您开通之日起长期有效，直至您自主选择取消本服务时终止。YourET将在您的会员自动续费服务截止日期前5日，向您以发送手机短信、站内私信等方式发送自动续费提示，请您予以关注。</strong> </p><p>       <strong>6.</strong>  <strong>本服务由您自主选择是否取消，若您未取消，则视为您同意YourET按照本规则进行代扣款项的续费尝试，一旦扣款成功，YourET将为您增加相应的会员有效期时长（您可在YourETAPP</strong>→<strong>我的</strong>→<strong>我的会员</strong>→<strong>进入会员页面查看会员有效期）。若在自动续费时/前，会员服务价格发生调整，应以现时有效的价格为准。</strong>若您在未取消本服务的同时购买其他会员套餐，或者在已购买其他会员套餐的同时购买本服务的，本服务的会员时长和其他会员套餐的时长将共同累计到您的会员有效期时长中，您理解并同意YourET将从您的账户中继续代扣本服务的费用。 </p><p>       \7. 如您在开通本服务后希望更换自动续费套餐，请先取消本服务，并在选择您希望的自动续费套餐后重新购买本服务。 </p><p> 8<strong>. 您可通过下述方式取消本服务：</strong> </p><p>       iOS12及以上系统：打开苹果iOS设备“App Store”→点击右上角苹果账户头像→进入“账户”→点击“订阅”→选择YourET，取消订阅；</p><p>       iOS12以下系统：打开苹果iOS设备“设置”→进入“iTunes Store 与 App Store”→点击“Apple ID”查看Apple ID→进入&quot;账户设置&quot;页面→点击“订阅”→选择YourET→取消订阅；</p><p>    <strong>特别提示：本服务取消成功后，不影响您已成功扣费且生效的会员权益，已生效的会员时长到期后不再自动续费。您在选择终止本服务前已经委托YourET自动续费扣款的指令仍然有效，YourET对于基于该指令扣除的费用不予退还，由您自行承担相关责任。</strong> </p></div>
+</body>
+</html>
