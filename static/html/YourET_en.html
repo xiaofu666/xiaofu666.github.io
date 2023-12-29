@@ -1,0 +1,550 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>更新时间：2023年12月26日</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.428571; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:first-child { margin-top: -20px; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; }
+button, input, select, textarea { color: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; font-size-adjust: inherit; font-kerning: inherit; font-variant-alternates: inherit; font-variant-ligatures: inherit; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-position: inherit; font-variant-emoji: inherit; font-feature-settings: inherit; font-optical-sizing: inherit; font-variation-settings: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px !important; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; border-right-style: none; border-right-color: currentcolor; background-color: inherit; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  @page { margin: 20mm 0px; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: medium; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: medium !important; border-style: none !important; border-color: currentcolor !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; font-size-adjust: none; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="mermaid"] svg, [lang="flow"] svg { max-width: 100%; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; border-bottom-style: none; border-bottom-color: currentcolor; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: medium; }
+.highlight td, .highlight tr { border: 0px; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    padding-bottom: .3em;
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+   padding-bottom: .3em;
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table tr th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    text-align: left;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr td {
+    border: 1px solid #dfe2e5;
+    text-align: left;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+}
+
+ .typora-export li, .typora-export p, .typora-export,  .footnote-line {white-space: normal;} 
+</style>
+</head>
+<body class='typora-export' >
+<div  id='write'  class = 'is-mac'><p><strong>Update date: December 26, 2023</strong>
+<strong>Effective date: December 26, 2023</strong></p><p><strong>YourET Service Agreement</strong></p><p><strong>[First and Introduction]:</strong></p><p><strong>Welcome to read the YourET Service Agreement and become YourET</strong>
+The YourET Service Agreement (hereinafter referred to as &quot;this Agreement&quot;) is a legal agreement between you and the YourET website (hereinafter collectively referred to as &quot;YourET&quot;) regarding &quot;YourET&quot; and the various services provided by YourET in &quot;YourET&quot; (hereinafter collectively referred to as &quot;Members&quot;).</p><p><strong>The clauses in this agreement that may have a significant relationship with your rights (including clauses that exempt YourET from liability, clauses that restrict your rights, agreed dispute resolution methods, and judicial jurisdiction clauses) have been specially reminded by YourET in bold font. Please pay attention to them and refer to them carefully. You should use the membership service only after confirming that you have fully read the bold font terms and clearly understood them</strong></p><p><strong>According to national laws and regulations, regulatory policies, and changes in industry norms, the rapid development trend of the Internet, and the needs of service operation, YourET has the right to modify, replace, and upgrade YourET software/services, and make them public to users in advance (including but not limited to pop-up announcements, website announcements, system messages, emails, etc.), At the same time, truthfully modify the terms/rules of the YourET service related agreement to cover all your rights and obligations with YourET. The aforementioned modified agreement terms/rules shall take effect from the date of expiration of the public notice period. If the user does not agree or accept modifications, replacements, or upgrades to YourET related software/services, they have the right to refuse, stop, or cancel the use of YourET services. If the user continues to use the YourET service, it shall be deemed that they are aware of the changes and agree to accept them</strong></p><p><strong>If you are under the age of 18, please read this agreement with your legal guardian</strong></p><p><strong>1、 General Provisions</strong>
+（1） Membership service is a network value-added service established by YourET on the YourET website and its software clients.
+（2） Membership services adhere to the following principles: to provide you with various more comprehensive online and offline value-added services as a member, and to promote mutual communication between you and other members, as well as between members and YourET.</p><p><strong>2、 YourET solemnly declares: * * * YourET services do not affect all existing free services on the YourET website and guarantee service quality. YourET service coexists with the existing official membership service system of YourET</strong></p><p><strong>3、 Program for obtaining membership services</strong></p><p>（1） How to become a member</p><ol start='' ><li>You can open the membership after paying a certain fee in accordance with the agreement through the existing ways designated by YourET, including but not limited to bank card, Alipay, WeChat payment and other ways or the future ways designated by YourET; Alternatively, you can become a member through official YourET activities/gifts from others, or by redeeming member points** The membership price may vary depending on the version of the software you are using, and the amount displayed at the time of service activation shall prevail**</li><li>You are not allowed to activate/receive this service for yourself or others through any of the following methods:**
+<strong>(1) For non personal purposes such as profit or business</strong>
+<strong>(2) Through any program, script, software, or other means such as robot software, spider software, crawler software, screen swiping software, etc</strong>
+<strong>(3) By any improper means or in a way that violates the principle of good faith (such as exploiting loopholes in rules, exploiting system vulnerabilities, black industries, speculation, etc.)</strong>
+<strong>(4) Modify member service period, consumption amount, transaction status, and other information through technical means</strong>
+<strong>(5) By means other than those specified by YourET</strong>
+<strong>(6) By infringing on the legitimate rights and interests of YourET or others</strong>
+<strong>(7) By other means that violate relevant laws, administrative regulations, national policies, etc</strong>
+<strong>If you violate the above regulations, YourET has the right to modify, restrict, suspend or terminate all or part of your membership services based on your actual situation, and will not provide any compensation or refund of fees/membership points</strong></li><li>You should join the membership through the designated method specified by YourET and must read, confirm, and comply with relevant agreements and usage methods. The information provided for your application to join the membership must be true and valid, and please modify the registered personal information in a timely manner when there are changes in your personal information.
+（2） After successfully becoming a member, you can enjoy multiple exclusive privileges and value-added services. The effective date is calculated from the time the member service is activated. You can check the details on the YourET [Member] page.
+（3） Before your membership expires, YourET will notify you through internal messaging system notifications and other means that your membership is about to expire. You can renew your membership again through specific methods such as purchase, gift, and redemption. If your membership expires, YourET will cease to provide membership services.
+<strong>（4） You are aware and agree that membership services are both online and virtual goods, and are provided on a fee first and then service basis. The membership fee is the price of the online goods corresponding to the membership service you purchased, rather than a prepayment or deposit, deposit, savings card, or other nature, Once the membership service is activated, it cannot be transferred or refunded (except for situations where YourET breaches the contract due to significant defects in the membership service, which makes it impossible for you to use it at all, if there are other provisions in this agreement, if laws and regulations require a refund, or if you contact YourET through customer service and YourET determines that a refund is possible). If you do not accept membership services, you may stop using or continuing membership services</strong></li></ol><p>&nbsp;</p><p><strong>4、 YourET&#39;s obligations</strong>
+YourET provides members with multiple exclusive privileges and value-added services, while making every effort to ensure the stability of member services. To this end, it provides various technical and customer service support, including but not limited to:
+（1） Online consultation customer service for registration, login, purchase, redemption, and gifting issues encountered during the period of becoming a member;
+（2） Active and effective content and technical support for member services, including daily operations, maintenance, repairs, and updates;
+（3） Frequently asked questions and explanations of basic rules during the provision of membership services;
+（4） Other technologies and/or services provided by YourET to you.</p><p><strong>5、 Membership Rules</strong>
+（1） After becoming a member, you will enjoy various membership exclusive privileges. You can view the membership exclusive privilege content on the 【 Member Privileges Content Privileges 】 page. In addition, in order to enhance your membership service experience, YourET will also provide various value-added services for free (including but not limited to dress up privileges, identity privileges, audio-visual privileges, etc.). Please refer to the relevant page information in &quot;Member Member Privileges&quot; for the included value-added service content. If the name of the member privileges under this agreement is inconsistent with the description on the page, it shall not affect the content of the membership benefits you actually enjoy.
+（2） When you apply for membership services and fill in the registration information, please provide authentic and valid information.
+<strong>（3） You are not allowed to register as a member by selling, transferring, stealing, leasing other user accounts, or enjoy membership through selling, transferring, stealing, lending, leasing other member accounts, etc</strong>
+<strong>（4） You understand and agree that due to the limitations of the copyright contract, YourET will provide value-added services in the form of videos/music as requested by the copyright owner and charge fees, which will not be included in the membership</strong>
+<strong>（5） You understand and agree that YourET has the right to make real-time adjustments to the included value-added service content based on the overall planning of the service and changes in its own operational strategy</strong>
+<strong>（6） If you violate this agreement or YourET&#39;s service terms, YourET has the right to take one or more of the following measures:</strong>
+<strong>1. Take technical measures to delete, block, or disconnect relevant information</strong>
+<strong>2. Modify, restrict, suspend or terminate all or part of the membership services</strong>
+<strong>3. Collect a penalty for breach of contract and offset any fees, points, or benefits that you have paid but have not used against the penalty; If the penalty is not sufficient to compensate for the loss, we will further demand that you compensate for the loss</strong>
+<strong>（7） In the process of using membership services, you should comply with laws, regulations, and other normative documents, including but not limited to the Law of the People&#39;s Republic of China on Guarding State Secrets, the Copyright Law of the People&#39;s Republic of China, the Regulations on the Security Protection of Computer Information Systems of the People&#39;s Republic of China, the Regulations on the Protection of Computer Software, and the Regulations on the Management of Internet Electronic Announcement Services The Cybersecurity Law of the People&#39;s Republic of China, the Regulations on the Protection of the Right to Information Network Dissemination, etc; We should abide by public order, respect social morality, not endanger cybersecurity, not use the internet to engage in activities that endanger national security, honor, and interests, incite subversion of state power, overthrow the socialist system, incite division of the country, undermine national unity, promote terrorism and extremism, promote national hatred and discrimination, spread violence, obscene and pornographic information, fabricate and disseminate false information to disrupt economic and social order, And activities that infringe upon the reputation, privacy, intellectual property, and other legitimate rights and interests of others. In any case, YourET may terminate the membership services provided to you without prior notice if it reasonably believes that you have engaged in the aforementioned behavior</strong>
+<strong>（8） Please be responsible for properly and correctly storing, using, and maintaining your membership information, account information, and account password. Please take necessary and effective confidentiality measures for your account information and password. To protect account security and prevent theft, YourET may occasionally or regularly use one or more methods to verify the user&#39;s identity (such as SMS verification, email authentication, etc.). If the verification is not successful, YourET has reasonable reasons to suspect that the account has been stolen or other unsafe situations, And depending on the severity of the situation, decide whether to suspend the provision of membership services to the account and/or take further measures</strong></p><p><strong>6、 Privacy protection</strong>
+<strong>You understand and agree that YourET will process and protect your personal information in accordance with the provisions of the YourET Privacy Policy</strong></p><p><strong>7、 Protection of minors</strong>
+<strong>（1） YourET places great emphasis on the protection of minors. If you are a minor, you should read this agreement under the supervision and guidance of your guardian, and use the membership service with the consent of your guardian</strong>
+<strong>（2） Guardians should guide their children to pay attention to safety issues when accessing the internet, and take preventive measures. If the guardian agrees to the use of membership services by minors, they must apply for consumption in the name of the guardian and provide correct guidance and supervision for the use of membership services by minors. The use of membership services by minors, as well as the exercise and performance of their rights and obligations under this agreement, shall be deemed to have been recognized by the guardian</strong>
+<strong>（3） YourET reminds minors to be good at online learning when using membership services, recognize the difference between the online world and the real world, and avoid becoming addicted to the internet, which can affect their daily learning and life</strong></p><p><strong>8、 Notice and Announcement Measures for Membership Services</strong>
+<strong>The notification and announcement of membership services will be issued to members in one or more of the following forms. Members can use this announcement to query the latest exclusive privileges and value-added service content, account information, member rights and obligations, service rules, etc., and must strictly abide by the corresponding service rules</strong></p><p><strong>9、 Suspension or Termination of Membership Services</strong>
+（1） YourET has the right to suspend or terminate membership services provided to you in the following circumstances:</p><ol><li>You voluntarily suspend or terminate, including but not limited to failure to renew upon expiration;</li><li>You or YourET, after independent judgment, believe that you have engaged in any behavior that violates national laws, regulations or regulatory policies, violates this agreement and YourET&#39;s service terms, affects or may affect the reputation and interests of YourET and/or its affiliates;</li><li>According to the provisions of laws, regulations, regulatory policies, or the requirements of competent authorities;</li><li>For emergency situations such as maintaining account and system security;</li><li>Force majeure (refers to unforeseeable, unavoidable, and insurmountable objective circumstances, including national laws, regulations, policies, orders from state organs, and other government actions or other events such as typhoons, floods, earthquakes, tsunamis, wars, strikes, etc.);</li><li>Other situations that YourET cannot resist.
+<strong>（2） When the aforementioned suspension or termination occurs, you acknowledge the following handling methods:</strong>
+<strong>1. In the event of the aforementioned termination, the unused membership benefits that have already been generated will be automatically cleared and not discounted</strong>
+<strong>2. Unless otherwise specified by laws and regulations or YourET, the membership fees collected will not be refunded</strong>
+<strong>3. If you have ongoing transactions on the YourET platform, YourET will handle them reasonably based on the situation</strong>
+<strong>4. In case of termination due to your violation of this agreement, YourET has the right to demand that you bear corresponding breach of contract responsibilities depending on the situation</strong>
+<strong>5. Unless otherwise provided by laws and regulations or specified by YourET, YourET shall not be liable to you or any third party</strong></li></ol><p><strong>10、 Application and Jurisdiction of Law</strong>
+<strong>The interpretation, validity, and dispute resolution of this agreement shall be governed by the laws and regulations of the mainland region of the People&#39;s Republic of China. If any disputes arise regarding the content or execution of this agreement, they shall be resolved through friendly negotiations as much as possible; When negotiation fails, all parties to the dispute agree to submit the dispute to the Shanghai Arbitration Commission for arbitration in accordance with its arbitration rules. The arbitration award shall be final and binding on all parties</strong></p><p><strong>YourET automatic renewal service rules</strong></p><p>These YourET Automatic Renewal Service Rules (hereinafter referred to as &quot;these Rules&quot;) are considered as attachments to the YourET Service Agreement. In case of any conflict between these Rules and the YourET Service Agreement, these Rules shall prevail.
+If you need to use YourET&#39;s automatic renewal service, you must agree to these rules.
+You understand and agree that:
+\1 YourET automatic renewal service (hereinafter referred to as &quot;this service&quot;) refers to the service provided by you, provided that you have already subscribed to the membership, in order to avoid the failure of members to renew in a timely manner due to negligence or other reasons due to the member&#39;s demand for automatic renewal. The specific automatic renewal billing cycle includes: monthly, quarterly, annual, etc. (specific to YourET provided), you can choose it yourself.
+\2** If you activate this service, it will be deemed that you authorize YourET to authorize payment channels 24 hours before and after the expiration of your membership automatic renewal service period, without verifying member account passwords, payment passwords, SMS verification codes, and other information, from your own recharge account, third-party payment accounts bound to participant accounts, bank cards, etc The fees for the next billing cycle are deducted from the payment account (hereinafter collectively referred to as the &quot;account&quot;) linked to the Apple Store account**
+<strong>Due to some channels (such as Apple iOS channels, etc.) being determined by the operator or payment channel based on actual circumstances, the deduction period for the aforementioned automatic renewal service shall be subject to the actual deduction time of each channel.
+\3 The prerequisite for implementing this service is that you have linked your member account to the above account and can successfully deduct the full amount from the above account</strong> If the renewal fails due to insufficient deductible balance in the above-mentioned account or abnormal account itself, you shall bear the responsibility on your own; If you do not choose to cancel this service on your own, YourET may continue to provide you with automatic renewal services (subject to the rules of each third-party payment channel) when your account itself returns to normal and your balance is sufficient. Once the deduction is successful, YourET will restore your membership service and this service**
+\4 You are aware and agree that if you use a third-party payment channel to pay fees, you will also be bound by the third-party service terms and usage rules.</p><p><strong>5 This service is valid for a long time from the date of your activation until you choose to cancel it at your own discretion. YourET will send you an automatic renewal reminder 5 days before the expiration date of your membership automatic renewal service by sending you mobile text messages, internal private messages, etc. Please pay attention to it</strong></p><p><strong>6. * * * This service is at your discretion to choose whether to cancel or not. If you do not cancel, it will be deemed that you agree to YourET&#39;s attempt to renew the deduction according to these rules. Once the deduction is successful, YourET will increase the corresponding membership validity period for you (you can check the membership validity period on YourETAPP * * → * * My * * → * * My Member * * → * * Enter the membership page). If there is an adjustment in the membership service price during or before the automatic renewal, the current valid price shall prevail</strong> If you purchase other member packages without canceling this service, or purchase this service at the same time as purchasing other member packages, the membership duration of this service and the duration of other member packages will be accumulated together into your membership validity period. You understand and agree that YourET will continue to deduct the fees of this service from your account.</p><p>\7 If you wish to change the automatic renewal package after activating this service, please cancel this service first and purchase this service again after selecting the automatic renewal package you wish to purchase.</p><p><strong>8. You can cancel this service by:</strong>
+IOS 12 and above systems: Open the Apple iOS device &quot;App Store&quot; -&gt;click on the Apple account avatar in the upper right corner -&gt;enter &quot;Account&quot; -&gt;click &quot;subscribe&quot; -&gt;select YourET to unsubscribe;
+IOS 12 and below systems: Open Apple iOS device &quot;Settings&quot; → enter &quot;iTunes Store and App Store&quot; → click &quot;Apple ID&quot; to view Apple ID → enter &quot;Account Settings&quot; page → click &quot;Subscription&quot; → select YourET → unsubscribe;</p><p><strong>Special reminder: After the successful cancellation of this service, it does not affect your membership rights that have been successfully deducted and become effective. The membership rights that have become effective will not be automatically renewed after the expiration of the membership period. The instruction that you entrusted YourET to automatically renew and deduct fees before choosing to terminate this service is still valid. YourET will not refund the fees deducted based on this instruction, and you will bear the relevant responsibility on your own</strong></p></div>
+</body>
+</html>
