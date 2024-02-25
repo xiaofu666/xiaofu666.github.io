@@ -328,27 +328,27 @@ SFJsonParser.prototype.makeProperty = function(proType, key, value) {
                 case SFValueType._Null:
                 case SFValueType._String: {
                     setget_str = this.makeSetGetMothod(proType,key,'String');
-                    property_str = '    var ' + this.makeLowerName(key) + ': String\n';
+                    property_str = '    var ' + this.makeLowerName(key) + ': String?\n';
                     break;
                 }
                 case SFValueType._Int: {
                     setget_str = this.makeSetGetMothod(proType,key,'Int');
-                    property_str = '    var ' + this.makeLowerName(key) + ': Int\n';
+                    property_str = '    var ' + this.makeLowerName(key) + ': Int?\n';
                     break;
                 }
                 case SFValueType._Float: {
                     setget_str = this.makeSetGetMothod(proType,key,'CGFloat');
-                    property_str = '    var ' + this.makeLowerName(key) + ': CGFloat\n';
+                    property_str = '    var ' + this.makeLowerName(key) + ': CGFloat?\n';
                     break;
                 }
                 case SFValueType._Boolean: {
                     setget_str = this.makeSetGetMothod(proType,key,'Bool');
-                    property_str = '    var ' + this.makeLowerName(key) + ': Bool\n';
+                    property_str = '    var ' + this.makeLowerName(key) + ': Bool?\n';
                     break;
                 }
                 case SFValueType._Dictionary: {
                     setget_str = this.makeSetGetMothod(proType,key,this.makeClassName(key));
-                    property_str = '    var ' + this.makeLowerName(key) + ': ' + this.makeClassName(key) + "\n";
+                    property_str = '    var ' + this.makeLowerName(key) + ': ' + this.rootClassName + this.makeClassName(key) + "Model?\n";
                     break;
                 }
                 case SFValueType._Array: {
@@ -356,32 +356,32 @@ SFJsonParser.prototype.makeProperty = function(proType, key, value) {
                     switch (valueInfo.type) {
                         case SFValueType._String:
                             setget_str = this.makeSetGetMothod(proType,key,'[String]');
-                            property_str = '    var ' + this.makeLowerName(key) + ': [String]\n';
+                            property_str = '    var ' + this.makeLowerName(key) + ': [String]?\n';
                             break;
                         case SFValueType._Int:
                             setget_str = this.makeSetGetMothod(proType,key,'[Int]');
-                            property_str = '    var ' + this.makeLowerName(key) + ': [Int]\n';
+                            property_str = '    var ' + this.makeLowerName(key) + ': [Int]?\n';
                             break;
                         case SFValueType._Float:
                             setget_str = this.makeSetGetMothod(proType,key,'[CGFloat]');
-                            property_str = '    var ' + this.makeLowerName(key) + ': [CGFloat]\n';
+                            property_str = '    var ' + this.makeLowerName(key) + ': [CGFloat]?\n';
                             break;
                         case SFValueType._Boolean:
                             setget_str = this.makeSetGetMothod(proType,key,'[Bool]');
-                            property_str = '    var ' + this.makeLowerName(key) + ': [Bool]\n';
+                            property_str = '    var ' + this.makeLowerName(key) + ': [Bool]?\n';
                             break;
                         case SFValueType._Dictionary:
                             setget_str = this.makeSetGetMothod(proType,key,'[' + this.makeClassName(key) + ']');
-                            property_str = '    var ' + this.makeLowerName(key) + ': [' + this.makeClassName(key) + ']\n';
+                            property_str = '    var ' + this.makeLowerName(key) + ': [' + this.rootClassName + this.makeClassName(key) + 'Model]?\n';
                             break;
                         case SFValueType._Array:
                             if (value.length > 0) {
                                 setget_str = this.makeSetGetMothod(proType,key,'[' + this.arrayElementType(key, value[0]) + ']');
-                                property_str = '    var ' + this.makeLowerName(key) + ': [' + this.arrayElementType(key, value[0]) + ']\n';
+                                property_str = '    var ' + this.makeLowerName(key) + ': [' + this.rootClassName + this.arrayElementType(key, value[0]) + 'Model]?\n';
                                 break;
                             }
                             setget_str = this.makeSetGetMothod(proType,key,'[Any]');
-                            property_str = '    var ' + this.makeLowerName(key) + ': [Any]\n';
+                            property_str = '    var ' + this.makeLowerName(key) + ': [Any]?\n';
                             break;
                     }
                 }
@@ -714,8 +714,12 @@ SFJsonParser.prototype.makeClassBeginTxt = function(key) {
             begin_txt += 'class ' + this.makeClassName(key) + ' {\n';
             break;
         case SFParserLanguage.SwiftUI:
-             begin_txt = '//MARK: - ' + key + ' -\n\n';
-             begin_txt += 'struct ' + this.makeClassName(key) + ': Codable {\n';
+             // begin_txt = '//MARK: - ' + key + ' -\n\n';
+			 if (key.length > 0) {
+				begin_txt += 'struct ' + this.rootClassName + this.makeClassName(key) + 'Model: Codable {\n';
+			 } else {
+				 begin_txt += 'struct ' + this.rootClassName + 'Model: Codable {\n';
+			 }
              break;
         case SFParserLanguage.Swift:
              begin_txt = '//MARK: - ' + key + ' -\n\n';
@@ -974,7 +978,7 @@ SFJsonParser.prototype.startParser = function(json) {
                     break;
             }
             this.classImplementation = this.makeFileRightText();
-            let content = this.makeClassBeginTxt(this.rootClassName);
+            let content = this.makeClassBeginTxt("");
             content += this.executeParseEngine(json_object, '');
             if (this.type == SFParserLanguage.Dart) {
                 content += this.makeDartCreateFunc(json_object);
