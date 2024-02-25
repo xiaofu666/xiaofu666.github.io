@@ -716,9 +716,9 @@ SFJsonParser.prototype.makeClassBeginTxt = function(key) {
         case SFParserLanguage.SwiftUI:
              // begin_txt = '//MARK: - ' + key + ' -\n\n';
 			 if (key.length > 0) {
-				begin_txt += 'struct ' + this.rootClassName + this.makeClassName(key) + 'Model: Codable {\n';
+				begin_txt += 'struct ' + this.rootClassName + this.makeClassName(key) + 'Model: Codable, Hashable {\n';
 			 } else {
-				 begin_txt += 'struct ' + this.rootClassName + 'Model: Codable {\n';
+				 begin_txt += 'struct ' + this.rootClassName + 'Model: Codable, Hashable {\n';
 			 }
              break;
         case SFParserLanguage.Swift:
