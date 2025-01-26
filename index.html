@@ -28,9 +28,8 @@
 
 	<body>
 		<div id="div_10" style="position:absolute;left:934px;top:48px;width:600px;height:400px;z-index:100;">
-			<img
-				draggable="false" src="http://pendant.360doc.com/1/67_1.gif">
-				</div>
+			<img draggable="false" src="http://pendant.360doc.com/1/67_1.gif">
+		</div>
 		<div id="body-wrap">
 			<nav class="not_index_bg" id="nav">
 				<div id="page_site-info">
@@ -136,10 +135,25 @@
 									referrerpolicy="no-refer"></script>
 							</div>
 						</div>
-						
+
 						<div class="card-widget card-webinfo">
 							<div class="card-content">
-								<canvas id="demo"></canvas>
+								<div class="video">
+								<canvas id="video-demo"></canvas>
+								<script src="static/js/text-image.iife.js"></script>
+
+								<script>
+									textImage.createTextImage({
+										canvas: document.getElementById('video-demo'),
+										raduis: 8,
+										isGray: true,
+										source: {
+											video: 'static/assets/2.MP4',
+											width: 300
+										},
+									});
+								</script>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -347,20 +361,7 @@
 
 
 		<script src="static/js/console.js"></script>
-		
-		<script src="static/js/text-image.iife.js"></script>
-		
-		<script>
-		  textImage.createTextImage({
-		    canvas: document.getElementById('demo'),
-		    raduis: 8,
-		    isGray: true,
-		    source: {
-		      video: 'static/assets/2.MP4',
-		      height: 700,
-		    },
-		  });
-		</script>
+
 
 	</body>
 
