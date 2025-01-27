@@ -1,23 +1,36 @@
-
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<style type="text/css">
+			html {
+				color: #000;
+				background: #FFF
+			}
+
+			.box {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		</style>
 	</head>
 	<body>
-		<canvas id="video-image"></canvas>
+		<div class="box">
+			<canvas id="video-image"></canvas>
 
-		<script src="text-image.iife.js"></script>
+			<script src="text-image.iife.js"></script>
 
-		<script>
-			textImage.createTextImage({
-				canvas: document.getElementById('video-image'),
-				raduis: 8,
-				isGray: true,
-				source: {
-					video: 'example.mp4',
-					width: 300
-				}
-			});
-		</script>
+			<script>
+				textImage.createTextImage({
+					canvas: document.getElementById('video-image'),
+					raduis: 8,
+					isGray: true,
+					source: {
+						video: 'example.mp4',
+						width: 300
+					}
+				});
+			</script>
+		</div>
 	</body>
 </html>
