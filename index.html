@@ -139,8 +139,23 @@
 
 						<div class="card-widget card-webinfo">
 							<div class="card-content">
-								<iframe src="static/text_image/text-image.html" scrolling="no" frameborder="0"
-									style="width: 300px;height: 100%"></iframe>
+								<!-- <iframe src="static/text_image/text-image.html" scrolling="no" frameborder="0"
+									style="width: 300px;height: 100%"></iframe> -->
+								<canvas id="video-image"></canvas>
+
+								<script src="static/text_image/text-image.iife.js"></script>
+
+								<script>
+									textImage.createTextImage({
+										canvas: document.getElementById('video-image'),
+										raduis: 8,
+										isGray: true,
+										source: {
+											video: 'static/text_image/example.mp4',
+											width: 300
+										}
+									});
+								</script>
 							</div>
 						</div>
 					</div>
