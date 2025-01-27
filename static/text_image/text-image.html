@@ -1,0 +1,23 @@
+
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	</head>
+	<body>
+		<canvas id="video-image"></canvas>
+
+		<script src="text-image.iife.js"></script>
+
+		<script>
+			textImage.createTextImage({
+				canvas: document.getElementById('video-image'),
+				raduis: 8,
+				isGray: true,
+				source: {
+					video: 'example.mp4',
+					width: 300
+				}
+			});
+		</script>
+	</body>
+</html>
